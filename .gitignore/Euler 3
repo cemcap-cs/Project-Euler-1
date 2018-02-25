@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Project_Euler_Problem_4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            long numm;
+            Console.WriteLine("Enter the number for the largest factor: ");
+            numm = Convert.ToInt64(Console.ReadLine());
+            long newnumm = numm;
+            long largestFact = 0;
+
+            int counter = 2;
+            while (counter * counter <= newnumm)
+            {
+                if (newnumm % counter == 0)
+                {
+                    newnumm = newnumm / counter;
+                    largestFact = counter;
+                }
+                else
+                {
+                    counter++;
+                }
+            }
+            if (newnumm > largestFact)
+            { // the remainder is a prime number
+                largestFact = newnumm;
+            }
+            Console.WriteLine("The largest primefactor of the entered number is: " + largestFact);
+            Console.ReadLine();
+
+        }
+    }
+}
