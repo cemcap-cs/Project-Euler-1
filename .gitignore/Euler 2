@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Project_Euler_Number_2
+{
+    static class Program
+    {
+        static void Main(string[] args)
+        {
+            int a = 0;
+            int b = 1;
+            int total = 0;
+            int evenTerms = 0;
+
+            while (total < 4000000)
+            {
+                total = a + b;
+                a = b;
+                b = total;
+                if (total % 2 == 0)
+                {
+                    evenTerms += total;
+                }
+            }
+            Console.WriteLine("The sum of all even numbers in Fibonacci Series under four million : " + evenTerms);
+            Console.ReadLine();
+        }
+
+    }
+}
